@@ -33,36 +33,36 @@
 
     <script src="{{ asset('js/jquery.js') }}"></script>
     <style>
-    /*--------------------------------------------------------------
+        /*--------------------------------------------------------------
 # Top Bar
 --------------------------------------------------------------*/
-    #topbar {
-        background: #3fbbc0;
-        color: #fff;
-        height: 21px;
-        font-size: 16px;
-        font-weight: 600;
-        z-index: 996;
-        transition: all 0.5s;
-    }
+        #topbar {
+            background: #3fbbc0;
+            color: #fff;
+            height: 21px;
+            font-size: 16px;
+            font-weight: 600;
+            z-index: 996;
+            transition: all 0.5s;
+        }
 
-    #topbar.topbar-scrolled {
-        top: -40px;
-    }
+        #topbar.topbar-scrolled {
+            top: -40px;
+        }
 
-    #topbar i {
-        padding-right: 6px;
-        line-height: 0;
-    }
+        #topbar i {
+            padding-right: 6px;
+            line-height: 0;
+        }
 
-    #header {
-        background: #fff;
-        transition: all 0.5s;
-        z-index: 997;
-        padding: 12px 0;
-        top: 21px;
-        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    }
+        #header {
+            background: #fff;
+            transition: all 0.5s;
+            z-index: 997;
+            padding: 12px 0;
+            top: 21px;
+            box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 
@@ -104,7 +104,8 @@
             </nav><!-- .navbar -->
 
             @if (Route::has('login'))
-            <a href="{{ route('login') }}" class="appointment-btn scrollto"><span class="d-none d-md-inline">Login</a>
+                <a href="{{ route('login') }}" class="appointment-btn scrollto"><span
+                        class="d-none d-md-inline">Login</a>
             @endif
             <a href="{{ route('register') }}" class="appointment-btn scrollto"><span
                     class="d-none d-md-inline">Register</a>
@@ -131,10 +132,10 @@
                             doctors in over 260 hospitals to echannel your appointment. 24x7 Supervision. 260+ Prominent
                             Hospitals. Categories: Public Hospitals, Private Hospitals, Ayurvedic Hospitals.</p>
                         @if (Route::has('login'))
-                        <a href="{{ route('login') }}" class="btn-get-started scrollto"><span
-                                class="d-none d-md-inline">Make
-                                an</span>
-                            Appointment</a>
+                            <a href="{{ route('login') }}" class="btn-get-started scrollto"><span
+                                    class="d-none d-md-inline">Make
+                                    an</span>
+                                Appointment</a>
                         @endif
                     </div>
                 </div>
@@ -147,10 +148,10 @@
                             doctors in over 260 hospitals to echannel your appointment. 24x7 Supervision. 260+ Prominent
                             Hospitals. Categories: Public Hospitals, Private Hospitals, Ayurvedic Hospitals.</p>
                         @if (Route::has('login'))
-                        <a href="{{ route('login') }}" class="btn-get-started scrollto"><span
-                                class="d-none d-md-inline">Make
-                                an</span>
-                            Appointment</a>
+                            <a href="{{ route('login') }}" class="btn-get-started scrollto"><span
+                                    class="d-none d-md-inline">Make
+                                    an</span>
+                                Appointment</a>
                         @endif
                     </div>
                 </div>
@@ -163,10 +164,10 @@
                             doctors in over 260 hospitals to echannel your appointment. 24x7 Supervision. 260+ Prominent
                             Hospitals. Categories: Public Hospitals, Private Hospitals, Ayurvedic Hospitals.</p>
                         @if (Route::has('login'))
-                        <a href="{{ route('login') }}" class="btn-get-started scrollto"><span
-                                class="d-none d-md-inline">Make
-                                an</span>
-                            Appointment</a>
+                            <a href="{{ route('login') }}" class="btn-get-started scrollto"><span
+                                    class="d-none d-md-inline">Make
+                                    an</span>
+                                Appointment</a>
                         @endif
                     </div>
                 </div>
@@ -242,7 +243,7 @@
                         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
                         mollit anim id est laborum.</p>
                     @if (Route::has('login'))
-                    <a class="cta-btn scrollto" href="{{ route('login') }}">Make an Make an Appointment</a>
+                        <a class="cta-btn scrollto" href="{{ route('login') }}">Make an Make an Appointment</a>
                     @endif
                 </div>
 
@@ -479,7 +480,8 @@
                                 <h3>Cardiology</h3>
                                 <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde
                                     sonata raqer a videna mareta paulona marka</p>
-                                <img src="{{ asset('welcome/img/departments-1.jpg') }}" alt="" class="img-fluid">
+                                <img src="{{ asset('welcome/img/departments-1.jpg') }}" alt=""
+                                    class="img-fluid">
                                 <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos
                                     ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima
                                     eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique
@@ -489,7 +491,8 @@
                                 <h3>Neurology</h3>
                                 <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde
                                     sonata raqer a videna mareta paulona marka</p>
-                                <img src="{{ asset('welcome/img/departments-2.jpg') }}" alt="" class="img-fluid">
+                                <img src="{{ asset('welcome/img/departments-2.jpg') }}" alt=""
+                                    class="img-fluid">
                                 <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos
                                     ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima
                                     eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique
@@ -499,7 +502,8 @@
                                 <h3>Hepatology</h3>
                                 <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde
                                     sonata raqer a videna mareta paulona marka</p>
-                                <img src="{{ asset('welcome/img/departments-3.jpg') }}" alt="" class="img-fluid">
+                                <img src="{{ asset('welcome/img/departments-3.jpg') }}" alt=""
+                                    class="img-fluid">
                                 <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos
                                     ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima
                                     eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique
@@ -509,7 +513,8 @@
                                 <h3>Pediatrics</h3>
                                 <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde
                                     sonata raqer a videna mareta paulona marka</p>
-                                <img src="{{ asset('welcome/img/departments-4.jpg') }}" alt="" class="img-fluid">
+                                <img src="{{ asset('welcome/img/departments-4.jpg') }}" alt=""
+                                    class="img-fluid">
                                 <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos
                                     ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima
                                     eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique
@@ -639,7 +644,8 @@
                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="100">
                             <div class="member-img">
-                                <img src="{{ asset('welcome/img/doctors/doctors-1.jpg') }}" class="img-fluid" alt="">
+                                <img src="{{ asset('welcome/img/doctors/doctors-1.jpg') }}" class="img-fluid"
+                                    alt="">
                                 <div class="social">
                                     <a href=""><i class="bi bi-twitter"></i></a>
                                     <a href=""><i class="bi bi-facebook"></i></a>
@@ -657,7 +663,8 @@
                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="200">
                             <div class="member-img">
-                                <img src="{{ asset('welcome/img/doctors/doctors-2.jpg') }}" class="img-fluid" alt="">
+                                <img src="{{ asset('welcome/img/doctors/doctors-2.jpg') }}" class="img-fluid"
+                                    alt="">
                                 <div class="social">
                                     <a href=""><i class="bi bi-twitter"></i></a>
                                     <a href=""><i class="bi bi-facebook"></i></a>
@@ -675,7 +682,8 @@
                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="300">
                             <div class="member-img">
-                                <img src="{{ asset('welcome/img/doctors/doctors-3.jpg') }}" class="img-fluid" alt="">
+                                <img src="{{ asset('welcome/img/doctors/doctors-3.jpg') }}" class="img-fluid"
+                                    alt="">
                                 <div class="social">
                                     <a href=""><i class="bi bi-twitter"></i></a>
                                     <a href=""><i class="bi bi-facebook"></i></a>
@@ -693,7 +701,8 @@
                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="400">
                             <div class="member-img">
-                                <img src="{{ asset('welcome/img/doctors/doctors-4.jpg') }}" class="img-fluid" alt="">
+                                <img src="{{ asset('welcome/img/doctors/doctors-4.jpg') }}" class="img-fluid"
+                                    alt="">
                                 <div class="social">
                                     <a href=""><i class="bi bi-twitter"></i></a>
                                     <a href=""><i class="bi bi-facebook"></i></a>
@@ -728,35 +737,43 @@
                     <div class="swiper-wrapper align-items-center">
                         <div class="swiper-slide"><a class="gallery-lightbox"
                                 href="{{ asset('welcome/img/gallery/gallery-1.jpg') }}"><img
-                                    src="{{ asset('welcome/img/gallery/gallery-1.jpg') }}" class="img-fluid" alt=""></a>
+                                    src="{{ asset('welcome/img/gallery/gallery-1.jpg') }}" class="img-fluid"
+                                    alt=""></a>
                         </div>
                         <div class="swiper-slide"><a class="gallery-lightbox"
                                 href="{{ asset('welcome/img/gallery/gallery-2.jpg') }}"><img
-                                    src="{{ asset('welcome/img/gallery/gallery-2.jpg') }}" class="img-fluid" alt=""></a>
+                                    src="{{ asset('welcome/img/gallery/gallery-2.jpg') }}" class="img-fluid"
+                                    alt=""></a>
                         </div>
                         <div class="swiper-slide"><a class="gallery-lightbox"
                                 href="{{ asset('welcome/img/gallery/gallery-3.jpg') }}"><img
-                                    src="{{ asset('welcome/img/gallery/gallery-3.jpg') }}" class="img-fluid" alt=""></a>
+                                    src="{{ asset('welcome/img/gallery/gallery-3.jpg') }}" class="img-fluid"
+                                    alt=""></a>
                         </div>
                         <div class="swiper-slide"><a class="gallery-lightbox"
                                 href="{{ asset('welcome/img/gallery/gallery-4.jpg') }}"><img
-                                    src="{{ asset('welcome/img/gallery/gallery-4.jpg') }}" class="img-fluid" alt=""></a>
+                                    src="{{ asset('welcome/img/gallery/gallery-4.jpg') }}" class="img-fluid"
+                                    alt=""></a>
                         </div>
                         <div class="swiper-slide"><a class="gallery-lightbox"
                                 href="{{ asset('welcome/img/gallery/gallery-5.jpg') }}"><img
-                                    src="{{ asset('welcome/img/gallery/gallery-5.jpg') }}" class="img-fluid" alt=""></a>
+                                    src="{{ asset('welcome/img/gallery/gallery-5.jpg') }}" class="img-fluid"
+                                    alt=""></a>
                         </div>
                         <div class="swiper-slide"><a class="gallery-lightbox"
                                 href="{{ asset('welcome/img/gallery/gallery-6.jpg') }}"><img
-                                    src="{{ asset('welcome/img/gallery/gallery-6.jpg') }}" class="img-fluid" alt=""></a>
+                                    src="{{ asset('welcome/img/gallery/gallery-6.jpg') }}" class="img-fluid"
+                                    alt=""></a>
                         </div>
                         <div class="swiper-slide"><a class="gallery-lightbox"
                                 href="{{ asset('welcome/img/gallery/gallery-7.jpg') }}"><img
-                                    src="{{ asset('welcome/img/gallery/gallery-7.jpg') }}" class="img-fluid" alt=""></a>
+                                    src="{{ asset('welcome/img/gallery/gallery-7.jpg') }}" class="img-fluid"
+                                    alt=""></a>
                         </div>
                         <div class="swiper-slide"><a class="gallery-lightbox"
                                 href="{{ asset('welcome/img/gallery/gallery-8.jpg') }}"><img
-                                    src="{{ asset('welcome/img/gallery/gallery-8.jpg') }}" class="img-fluid" alt=""></a>
+                                    src="{{ asset('welcome/img/gallery/gallery-8.jpg') }}" class="img-fluid"
+                                    alt=""></a>
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
@@ -1025,8 +1042,7 @@
                                     placeholder="Subject" required>
                             </div>
                             <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Message"
-                                    required></textarea>
+                                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
                             </div>
                             <div class="my-3">
                                 <div class="loading">Loading</div>
