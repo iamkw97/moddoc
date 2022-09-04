@@ -56,18 +56,6 @@
             </li>
         </div>
 
-
-        {{-- <div class="search-bar  mx-5">
-            <form class="search-form d-flex align-items-center" method="POST" action="#">
-                <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
-                <button type="submit" title="Search">
-                    <i class="bi bi-search"></i>
-                </button>
-            </form>
-        </div>
-        <!-- End Search Bar --> --}}
-
-
         <nav class="header-nav ms-auto">
             <ul class="d-flex align-items-center">
                 <li class="nav-item d-block d-lg-none">
@@ -75,15 +63,6 @@
                         <i class="bi bi-search"></i>
                     </a>
                 </li>
-                <!-- End Search Icon-->
-                {{-- <li class="nav-item d-none d-lg-block">
-                    <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
-                        <span class="input-group-addon input-group-prepend border-right">
-                            <span class="icon-calendar input-group-text calendar-icon"></span>
-                        </span>
-                        <input type="text" class="form-control">
-                    </div>
-                </li> --}}
 
                 <li class="nav-item dropdown">
                     <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
@@ -357,20 +336,20 @@
                 </ul>
             </li>
             <!-- End Forms Nav -->
-            <li class="nav-heading">Payments</li>
+            <li class="nav-heading">Doctor Details</li>
             {{-- loan --}}
             <li class="nav-item">
-                <a class="nav-link collapsed" href="">
-                    <i class="bi bi-grid"></i>
-                    <span>Add Payment</span>
+                <a class="nav-link collapsed" href="{{ route('start.register-doctor') }}">
+                    <i class="bi bi-person-plus-fill"></i>
+                    <span>New Doctor</span>
                 </a>
             </li>
             {{-- end new loan ---------------------------------------------------------------- --}}
             {{-- loan --}}
             <li class="nav-item">
                 <a class="nav-link collapsed" href="index.html">
-                    <i class="bi bi-grid"></i>
-                    <span>Payment Status</span>
+                    <i class="bi bi-people-fill"></i>
+                    <span>Doctor Status</span>
                 </a>
             </li>
             {{-- end new loan ---------------------------------------------------------------- --}}
