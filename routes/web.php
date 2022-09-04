@@ -16,3 +16,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/*
+|--------------------------------------------------------------------------
+| Dashboard Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/super',['middleware'=>'issuper', function () {
+    return view('dashboards.home-su');
+}]);
+Route::get('/admin',['middleware'=>'isadmin', function () {
+    return view('dashboards.home-ad');
+}]);
+Route::get('/clerk',['middleware'=>'isclerk', function () {
+    return view('dashboards.home-cl');
+}]);
+Route::get('/patient',['middleware'=>'ispatient', function () {
+    return view('dashboards.home-pa');
+}]);

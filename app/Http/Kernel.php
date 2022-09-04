@@ -51,8 +51,13 @@ class Kernel extends HttpKernel
      * These middleware may be assigned to groups or used individually.
      *
      * @var array<string, class-string|string>
-     */
+            */
     protected $routeMiddleware = [
+        'issuper' => \App\Http\Middleware\IsSuper::class,
+        'isadmin' => \App\Http\Middleware\IsAdmin::class,
+        'isclerk' => \App\Http\Middleware\IsClerk::class,
+        'ispatient' => \App\Http\Middleware\IsPatient::class,
+
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,
