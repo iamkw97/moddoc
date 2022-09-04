@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,22 +20,22 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 /*
 |--------------------------------------------------------------------------
 | Dashboard Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/super',['middleware'=>'issuper', function () {
+Route::get('/super', ['middleware' => 'issuper', function () {
     return view('dashboards.home-su');
 }]);
-Route::get('/admin',['middleware'=>'isadmin', function () {
+Route::get('/admin', ['middleware' => 'isadmin', function () {
     return view('dashboards.home-ad');
 }]);
-Route::get('/clerk',['middleware'=>'isclerk', function () {
+Route::get('/clerk', ['middleware' => 'isclerk', function () {
     return view('dashboards.home-cl');
 }]);
-Route::get('/patient',['middleware'=>'ispatient', function () {
+Route::get('/patient', ['middleware' => 'ispatient', function () {
     return view('dashboards.home-pa');
 }]);
