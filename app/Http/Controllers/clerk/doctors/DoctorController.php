@@ -10,11 +10,20 @@ use Illuminate\Http\Request;
 
 class DoctorController extends Controller
 {
+    /*
+|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+| start doctor registration form
+|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
     public function startRegisterDoctor()
     {
         return view('clerk.doctors.register-doctor');
     }
-
+    /*
+|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+| store doctor registration data
+|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
     public function storeRegisterDoctor(Request $request)
     {
         $validated = $request->validate([
@@ -39,25 +48,30 @@ class DoctorController extends Controller
             $doc_sex = 'Female';
         }
 
-        if ($request->doc_field == 'Male') {
-            $doc_field = 'Male';
-        } else {
-            $doc_field = 'Female';
-        }
+        // if ($request->doc_field == 'Male') {
+        //     $doc_field = 'Male';
+        // } else {
+        //     $doc_field = 'Female';
+        // }
 
-        if ($request->doc_status == 'Male') {
-            $doc_status = 'Male';
-        } else {
-            $doc_status = 'Female';
-        }
+        // if ($request->doc_status == 'Male') {
+        //     $doc_status = 'Male';
+        // } else {
+        //     $doc_status = 'Female';
+        // }
 
-        if ($request->doc_working_branch == 'Male') {
-            $doc_working_branch = 'Male';
-        } else {
-            $doc_working_branch = 'Female';
-        }
+        // if ($request->doc_working_branch == 'Male') {
+        //     $doc_working_branch = 'Male';
+        // } else {
+        //     $doc_working_branch = 'Female';
+        // }
+
+        $doc_field = $request->doc_field;
+        $doc_status = $request->doc_status;
+        $doc_working_branch = $request->doc_working_branch;
 
         if ($validated);
+
 
         // Doctor------------------------------------------------------
         $doc_description = 'doc-001';
@@ -83,7 +97,8 @@ class DoctorController extends Controller
         $doctor->save();
 
         // doc_field ------------------------------------------------------
-        $doc_id = 1;
+
+        $doc_id = Doctor::orderBy('doc_id', 'desc')->first()->doc_id;
 
         $field_description = 'doc-001';
         $doctor_field = new DoctorFields();
@@ -97,17 +112,28 @@ class DoctorController extends Controller
         $doctor_status = new DoctorStatus();
         $doctor_status->status_description = $status_description;
         $doctor_status->status_name = $doc_status;
-        $doctor_field->doc_id = $doc_id;
+        $doctor_status->doc_id = $doc_id;
         $doctor_status->save();
 
         // doc_status ------------------------------------------------------
-        $branch_description = 'doc-001';
-        $doctor_branch = new DoctorStatus();
-        $doctor_branch->branch_description = $branch_description;
-        $doctor_branch->branch_name = $doc_working_branch;
-        $doctor_field->doc_id = $doc_id;
-        $doctor_branch->save();
+        // $branch_description = 'doc-001';
+        // $doctor_branch = new DoctorStatus();
+        // $doctor_branch->branch_description = $branch_description;
+        // $doctor_branch->branch_name = $doc_working_branch;
+        // $doctor_branch->doc_id = $doc_id;
+        // $doctor_branch->save();
 
         return back();
+    }
+    /*
+|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+| start all doctors list
+|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+    public function startListDoctors()
+    {
+        $doctors = Doctor::all();
+
+        return view('clerk.doctors.list-doctor', compact('doctors'));
     }
 }

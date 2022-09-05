@@ -133,8 +133,17 @@
                                 name="doc_field" value="{{ $doctor->doc_field ?? '' }}" id="doc_field"
                                 value="{{ old('doc_field') }}" autocomplete="doc_field" autofocus>
                                 <option selected disabled>--select--</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
+                                <option value="Anesthesiology">Anesthesiology</option>
+                                <option value="Cardiology">Cardiology</option>
+                                <option value="Dermatology">Dermatology</option>
+                                <option value="Endocrinology">Endocrinology</option>
+                                <option value="Gastroenterology">Gastroenterology</option>
+                                <option value="Hematology">Hematology</option>
+                                <option value="Neurology">Neurology</option>
+                                <option value="Oncology">Oncology</option>
+                                <option value="Pathology">Pathology</option>
+                                <option value="Radiology">Radiology</option>
+                                <option value="Urology">Urology</option>
                             </select>
                             @error('doc_field')
                                 <span class="invalid-feedback" role="alert">
@@ -154,8 +163,11 @@
                                 name="doc_status" value="{{ $doctor->doc_status ?? '' }}" id="doc_status"
                                 value="{{ old('doc_status') }}" autocomplete="doc_status" autofocus>
                                 <option selected disabled>--select--</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
+                                <option value="Doctor">Doctor</option>
+                                <option value="Consultant">Consultant</option>
+                                <option value="Senior Consultant">Senior Consultant</option>
+                                <option value="Physician">Physician</option>
+                                <option value="Surgeon">Surgeon</option>
                             </select>
                             @error('doc_status')
                                 <span class="invalid-feedback" role="alert">
@@ -169,7 +181,7 @@
                     <div class="form-group col-md-4">
                         <fieldset class="form-group">
                             <label for="doc_working_branch"><b>
-                                    <h6>9. Branch <span style="color:#ff0000">*</span></h6>
+                                    <h6>9. District <span style="color:#ff0000">*</span></h6>
                                 </b></label>
                             <select
                                 class="form-select border-info border-2 @error('doc_working_branch') is-invalid @enderror"
@@ -178,8 +190,21 @@
                                 value="{{ old('doc_working_branch') }}"
                                 autocomplete="doc_working_branch" autofocus>
                                 <option selected disabled>--select--</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
+                                <option value="Colombo">Colombo</option>
+                                <option value="Gampaha">Gampaha</option>
+                                <option value="Kalutara">Kalutara</option>
+                                <option value="Kandy">Kandy</option>
+                                <option value="Matale">Matale</option>
+                                <option value="Nuwara Eliya">Nuwara Eliya</option>
+                                <option value="Galle">Galle</option>
+                                <option value="Jaffna">Jaffna</option>
+                                <option value="Mannar">Mannar</option>
+                                <option value="Vavuniya">Vavuniya</option>
+                                <option value="Kurunegala">Kurunegala</option>
+                                <option value="Badulla">Badulla</option>
+                                <option value="Kegalle">Kegalle</option>
+                                <option value="Polonnaruwa">Polonnaruwa</option>
+
                             </select>
                             @error('doc_stdoc_working_branchatus')
                                 <span class="invalid-feedback" role="alert">

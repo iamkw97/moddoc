@@ -50,6 +50,8 @@ Route::get('/patient', ['middleware' => 'ispatient', function () {
 // starting---------------------------------------------------------------
 // start doctor register blade
 Route::get('/clerk/doctor/register', [DoctorController::class, 'startRegisterDoctor'])->name('start.register-doctor');
+// start doctor liat
+Route::get('/clerk/doctor/list', [DoctorController::class, 'startListDoctors'])->name('start.list-doctor');
 
 
 // storing----------------------------------------------------------------

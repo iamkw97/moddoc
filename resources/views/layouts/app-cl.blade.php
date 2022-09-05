@@ -347,7 +347,7 @@
             {{-- end new loan ---------------------------------------------------------------- --}}
             {{-- loan --}}
             <li class="nav-item">
-                <a class="nav-link collapsed" href="index.html">
+                <a class="nav-link collapsed" href="{{ route('start.list-doctor') }}">
                     <i class="bi bi-people-fill"></i>
                     <span>Doctor Status</span>
                 </a>
