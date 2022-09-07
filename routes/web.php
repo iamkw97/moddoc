@@ -52,9 +52,14 @@ Route::get('/patient', ['middleware' => 'ispatient', function () {
 Route::get('/clerk/doctor/register', [DoctorController::class, 'startRegisterDoctor'])->name('start.register-doctor');
 // start doctor liat
 Route::get('/clerk/doctor/list', [DoctorController::class, 'startListDoctors'])->name('start.list-doctor');
-
+// start doctor register blade
+Route::get('/clerk/doctor/{loanID}/view', [DoctorController::class, 'startViewDoctor'])->name('start.view-doctor');
 
 // storing----------------------------------------------------------------
-Route::post('/clerk/doctor/save', [DoctorController::class, 'storeRegisterDoctor'])->name('store.register-doctor');
+Route::post('/clerk/doctor/store', [DoctorController::class, 'storeRegisterDoctor'])->name('store.register-doctor');
 
 // updating---------------------------------------------------------------
+// Route::post('/clerk/doctor/{docID}/update', [DoctorController::class, 'updateDoctorProfile'])->name('update.profile-doctor');
+
+// deleting---------------------------------------------------------------
+Route::get('/clerk/doctor/{docID}/delete', [DoctorController::class, 'deleteDoctorProfile'])->name('delete.profile-doctor');

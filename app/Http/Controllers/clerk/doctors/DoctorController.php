@@ -7,6 +7,7 @@ use App\Models\clerk\doctors\Doctor;
 use App\Models\clerk\doctors\DoctorFields;
 use App\Models\clerk\doctors\DoctorStatus;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DoctorController extends Controller
 {
@@ -98,22 +99,22 @@ class DoctorController extends Controller
 
         // doc_field ------------------------------------------------------
 
-        $doc_id = Doctor::orderBy('doc_id', 'desc')->first()->doc_id;
+        // $doc_id = Doctor::orderBy('doc_id', 'desc')->first()->doc_id;
 
-        $field_description = 'doc-001';
-        $doctor_field = new DoctorFields();
-        $doctor_field->field_description = $field_description;
-        $doctor_field->field_name = $doc_field;
-        $doctor_field->doc_id = $doc_id;
-        $doctor_field->save();
+        // $field_description = 'doc-001';
+        // $doctor_field = new DoctorFields();
+        // $doctor_field->field_description = $field_description;
+        // $doctor_field->field_name = $doc_field;
+        // $doctor_field->doc_id = $doc_id;
+        // $doctor_field->save();
 
-        // doc_status ------------------------------------------------------
-        $status_description = 'doc-001';
-        $doctor_status = new DoctorStatus();
-        $doctor_status->status_description = $status_description;
-        $doctor_status->status_name = $doc_status;
-        $doctor_status->doc_id = $doc_id;
-        $doctor_status->save();
+        // // doc_status ------------------------------------------------------
+        // $status_description = 'doc-001';
+        // $doctor_status = new DoctorStatus();
+        // $doctor_status->status_description = $status_description;
+        // $doctor_status->status_name = $doc_status;
+        // $doctor_status->doc_id = $doc_id;
+        // $doctor_status->save();
 
         // doc_status ------------------------------------------------------
         // $branch_description = 'doc-001';
@@ -135,5 +136,79 @@ class DoctorController extends Controller
         $doctors = Doctor::all();
 
         return view('clerk.doctors.list-doctor', compact('doctors'));
+    }
+
+    /*
+|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+| start doctor profile page
+|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+    public function startViewDoctor($docID)
+    {
+        $data = DB::table('doctors')
+            ->select(
+                'doc_id',
+                'doc_description',
+                'doc_name',
+                'doc_nic',
+                'doc_sex',
+                'doc_email',
+                'doc_phone',
+                'doc_birthday',
+
+                'doc_field',
+                'doc_status',
+                'doc_working_branch',
+
+                'doc_office_address',
+                'doc_personal_address',
+                'doc_about',
+
+            )
+            ->where('doc_id', $docID)
+            ->get();
+
+        return view('clerk.doctors.view-doctor', compact('data'));
+    }
+    /*
+|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+| update  doctor profile
+|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+    public function updateDoctorProfile($docID, Request $request)
+    {
+        // $docs = Doctor::where('doc_id', $docID)->first();
+        $docs = Doctor::orderBy('doc_id', 'desc')->where('doctors.doc_id', $docID)->first()->doc_id;
+        $doc_description = Doctor::orderBy('doc_id', 'desc')->where('doctors.doc_id', $docID)->first()->doc_description;
+        // dd($docs);
+        // $docs->doc_description = $doc_description;
+        $docs->doc_name = $request->doc_name;
+        $docs->doc_nic = $request->doc_nic;
+        $docs->doc_sex = $request->doc_sex;
+        $docs->doc_email = $request->doc_email;
+        $docs->doc_phone = $request->doc_phone;
+        $docs->doc_birthday = $request->doc_birthday;
+
+        $docs->doc_field = $request->doc_field;
+        $docs->doc_status = $request->doc_status;
+        $docs->doc_working_branch = $request->doc_working_branch;
+
+        $docs->doc_office_address = $request->doc_office_address;
+        $docs->doc_personal_address = $request->doc_personal_address;
+        $docs->doc_about = $request->doc_about;
+
+        $docs->update();
+    }
+
+    /*
+|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+| delete doctor
+|++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+    public function deleteDoctorProfile($docID)
+    {
+        // Doctor::findOrFail($docID)->delete();
+        DB::table('doctors')->where('doc_id', $docID)->delete();
+        return back();
     }
 }

@@ -65,9 +65,14 @@
                                         <p class="">{{ $item->doc_phone }} </p>
                                     </td>
                                     <td>
-                                        {{-- {{ route('start.hirer-show-approved', $item->loan_id) }} --}}
-                                        <a href="" class="btn badge bg-info" data-mdb-ripple-color="dark">
+
+                                        <a href="{{ route('start.view-doctor', $item->doc_id) }}"
+                                            class="btn badge bg-warning" data-mdb-ripple-color="dark">
                                             View
+                                        </a>
+                                        <a href="{{ route('delete.profile-doctor', $item->doc_id) }}"
+                                            class="btn badge bg-danger" data-mdb-ripple-color="dark">
+                                            Delete
                                         </a>
 
                                     </td>
